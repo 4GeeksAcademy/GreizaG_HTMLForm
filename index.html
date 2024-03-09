@@ -13,82 +13,107 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>HTML Form</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="form-head fs-3 my-2 bg-secondary-subtle ps-3"><strong>Payment for example</strong></div>
-        <!--Mensaje alerta-->
-        <div class="alert alert-danger" role="alert">
-            Some fields are missing
+    <div class="card container p-0">
+        <div class="card-header p-3 fs-3">
+            <div class="form-head">
+                <strong>Payment for example</strong>
+            </div>
         </div>
-        <div>
-            <form>
-                <!--Información forma de pago-->
-                <div class="row">
-                    <div class="col-5">
-                        <label for="Card#">Card #</label>
-                        <input type="text" id="Card#" class="input-group input-group-sm mb-3 mt-2"
-                            placeholder="XXXXXXXXXX">
+        <div class="card-body">
+            <!--Mensaje alerta-->
+            <div class="alert alert-danger" role="alert">
+                Some fields are missing
+            </div>
+            <div>
+                <form>
+                    <!--Información forma de pago-->
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="Card#">Card #</label>
+                            <input type="text" id="Card#" class="input-group input-group-sm mb-3 mt-2"
+                                placeholder="XXXXXXXXXX">
+                        </div>
+                        <div class="col-3">
+                            <label for="CVC#">CVC #</label>
+                            <input type="text" id="CVC#" class="input-group input-group-sm mb-3 mt-2"
+                                placeholder="0000">
+                        </div>
+                        <div class="col-4">
+                            <label for="Amount">Amount</label>
+                            <input type="text" id="Amount" class="input-group input-group-sm mb-3 mt-2"
+                                placeholder="Amount">
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <label for="CVC#">CVC #</label>
-                        <input type="text" id="CVC#" class="input-group input-group-sm mb-3 mt-2" placeholder="0000">
+                    <!--Información nombre y apellido-->
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="Firstname">First Name</label>
+                            <input type="text" id="Firstname" class="input-group input-group-sm mb-3 mt-2">
+                        </div>
+                        <div class="col-6">
+                            <label for="Lastname">Last Name</label>
+                            <input type="text" id="Lastname" class="input-group input-group-sm mb-3 mt-2">
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <label for="Amount">Amount</label>
-                        <input type="text" id="Amount" class="input-group input-group-sm mb-3 mt-2"
-                            placeholder="Amount">
-                    </div>
-                </div>
-                <!--Información nombre y apellido-->
-                <div class="row">
-                    <div class="col-6">
-                        <label for="Firstname">First Name</label>
-                        <input type="text" id="Firstname" class="input-group input-group-sm mb-3 mt-2">
-                    </div>
-                    <div class="col-6">
-                        <label for="Lastname">Last Name</label>
-                        <input type="text" id="Lastname" class="input-group input-group-sm mb-3 mt-2">
-                    </div>
-                </div>
-                <!--Información dirección-->
-                <div class="row">
-                    <div class="col-6">
-                        <label for="City">City</label>
-                        <input type="text" id="City" class="input-group input-group-sm mb-3 mt-2">
-                    </div>
-                    <div class="col-3">
-                        <label for="State">State</label>
-                        <input type="text" id="State" name="State" list="States" class="input-group input-group-sm mb-3 mt-2"
-                            placeholder="Pick a State">
+                    <!--Información dirección-->
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="City">City</label>
+                            <input type="text" id="City" class="input-group input-group-sm mb-3 mt-2">
+                        </div>
+                        <div class="col-3">
+                            <label for="State">State</label>
+                            <input type="text" id="State" name="State" list="States"
+                                class="input-group input-group-sm mb-3 mt-2" placeholder="Pick a State">
                             <datalist id="States">
                                 <option value="A">
                                 <option value="B">
                                 <option value="C">
                             </datalist>
+                        </div>
+                        <div class="col-3">
+                            <label for="Postal Code">Postal Code</label>
+                            <input type="text" id="Postal Code" class="input-group input-group-sm mb-3 mt-2">
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <label for="Postal Code">Postal Code</label>
-                        <input type="text" id="Postal Code" class="input-group input-group-sm mb-3 mt-2">
+                    <div class="row">
+                        <!--Información para seleccionar método de pago-->
+                        <div class="col-6">
+                            <p>We accept:</p>
+                            <div class="d-inline-flex p-3 bg-dark-subtle rounded">
+                                <input type="radio" id="master" name="paymeth" value="master">
+                                <label for="master"><i class="fa-brands fa-cc-mastercard"></i></label>
+                                <input type="radio" id="visa" name="paymeth" value="visa" class="ms-3">
+                                <label for="visa"><i class="fa-brands fa-cc-visa"></i></label>
+                                <input type="radio" id="diners" name="paymeth" value="diners" class="ms-3">
+                                <label for="diners"><i class="fa-brands fa-cc-diners-club"></i></i></label>
+                                <input type="radio" id="amex" name="paymeth" value="amex" class="ms-3">
+                                <label for="amex"><i class="fa-brands fa-cc-amex"></i></label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="Message">Mesagge</label>
+                            <textarea id="info" name="info" rows="5" col="40"
+                                class="input-group input-group-sm mb-2 mt-2 rounded"></textarea>
+                            <span>Add any notes here.</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <!--Información para seleccionar método pago-->
-                    </div>
-                    <div class="col-6">
-                        <label for="Message">Mesagge</label>
-                        <textarea id="info" name="info" rows="5" col="40" class="input-group input-group-sm mb-2 mt-2"></textarea>
-                        <span>Add any notes here.</span>
-                    </div>
-                </div>
-                <div>
-                    <!--Información botones-->
-                </div>
-            </form>
+            </div>
         </div>
+        <div class="card-footer text-body-secondary d-flex">
+            <a href="#" class="btn btn-secondary ms-auto">Cancel</a>
+            <a href="#" class="btn btn-primary ms-2">Send</a>
+        </div>
+        </form>
+    </div>
+    </div>
     </div>
 </body>
 
